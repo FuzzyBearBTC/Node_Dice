@@ -391,13 +391,18 @@ var _nxtHelper = __webpack_require__(26);
 
 var _nxtHelper2 = _interopRequireDefault(_nxtHelper);
 
+var _rpiHelper = __webpack_require__(40);
+
+var _rpiHelper2 = _interopRequireDefault(_rpiHelper);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     'BTC': _bitcoinHelper2.default,
     'NXT': _nxtHelper2.default,
+	'RPI': _rpiHelper2.default,
     getCoinNames: function () {
-        return [{ coinName: 'BTC', min: 0.00000001, max: 1 }, { coinName: 'NXT', min: 1, max: 1000 }];
+        return [{ coinName: 'BTC', min: 0.00000001, max: 1 }, { coinName: 'NXT', min: 1, max: 1000 }, { coinName: 'RPI', min: 1, max: 10000 }];
     }
 };
 
@@ -556,7 +561,7 @@ exports.default = config;
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"nodedice_server","description":"An open source dice game faucet built on node.js for BTC/NXT","version":"2.0.4","keywords":["open source","node.js","nodejs dice bitcoin btc faucet"],"homepage":"https://github.com/popmanhe/node_dice","author":"Neo He","repository":{"type":"git","url":"https://github.com/popmanhe/node_dice"},"scripts":{"start":"npm-run-all --parallel open:src run:dev lint:watch","build":"npm-run-all open:dist run:prod","prod":"npm-run-all open:dist","open:src":"babel-node tools/srcServer.js","open:dist":"babel-node tools/distServer.js","run:dev":"nodemon dev/nodeDiceServer.js --watch dev","run:prod":"pm2 start dist/nodeDiceServer.js","lint":"esw src --color","lint:watch":"npm run lint -- --watch"},"config":{"unsafe-perm":true},"bugs":{"url":"https://github.com/popmanhe/node_dice/issues","email":"popman.he@gmail.com"},"license":"MIT BSD","dependencies":{"bitcoin":"^3.0.1","blockchain.info":"^2.8.1","body-parser":"^1.17.2","bson":"^1.0.4","compression":"^1.7.0","connect-mongo":"^1.3.2","cookie-parser":"^1.4.3","cookieparser":"^0.1.0","debug":"^3.0.0","errorhandler":"^1.5.0","express":"^4.15.4","express-session":"^1.15.5","express-validator":"^3.2.1","jsonwebtoken":"^7.4.3","lodash":"^4.17.4","lru-cache":"^4.1.1","method-override":"^2.3.9","mongodb":"^2.2.31","mongoose":"^4.11.7","morgan":"^1.8.2","nodemailer":"4.0.1","request":"^2.81.0","serve-favicon":"^2.4.3","should":"^11.2.1","socket.io":"^2.0.3","uuid":"^3.1.0","winston":"^2.4.0","winston-daily-rotate-file":"^1.7.2","winston-mongodb":"^3.0.1"},"devDependencies":{"babel-cli":"6.26.0","babel-core":"6.26.0","babel-eslint":"^7.2.3","babel-loader":"^7.1.1","babel-polyfill":"6.26.0","babel-preset-env":"^1.6.0","debug":"3.0.0","eslint":"4.4.1","eslint-plugin-import":"2.7.0","eslint-plugin-node":"5.1.1","eslint-watch":"3.1.2","nodemon":"^1.11.0","npm-run-all":"4.0.2","webpack":"3.5.5","webpack-bundle-analyzer":"2.9.0","webpack-dev-middleware":"1.12.0","webpack-hot-middleware":"2.18.2","webpack-md5-hash":"0.0.5"}}
+module.exports = {"name":"nodedice_server","description":"An open source dice game faucet built on node.js for BTC/NXT/RPI","version":"2.0.4","keywords":["open source","node.js","nodejs dice bitcoin btc faucet"],"homepage":"https://github.com/popmanhe/node_dice","author":"Neo He","repository":{"type":"git","url":"https://github.com/popmanhe/node_dice"},"scripts":{"start":"npm-run-all --parallel open:src run:dev lint:watch","build":"npm-run-all open:dist run:prod","prod":"npm-run-all open:dist","open:src":"babel-node tools/srcServer.js","open:dist":"babel-node tools/distServer.js","run:dev":"nodemon dev/nodeDiceServer.js --watch dev","run:prod":"pm2 start dist/nodeDiceServer.js","lint":"esw src --color","lint:watch":"npm run lint -- --watch"},"config":{"unsafe-perm":true},"bugs":{"url":"https://github.com/popmanhe/node_dice/issues","email":"popman.he@gmail.com"},"license":"MIT BSD","dependencies":{"bitcoin":"^3.0.1","blockchain.info":"^2.8.1","body-parser":"^1.17.2","bson":"^1.0.4","compression":"^1.7.0","connect-mongo":"^1.3.2","cookie-parser":"^1.4.3","cookieparser":"^0.1.0","debug":"^3.0.0","errorhandler":"^1.5.0","express":"^4.15.4","express-session":"^1.15.5","express-validator":"^3.2.1","jsonwebtoken":"^7.4.3","lodash":"^4.17.4","lru-cache":"^4.1.1","method-override":"^2.3.9","mongodb":"^2.2.31","mongoose":"^4.11.7","morgan":"^1.8.2","nodemailer":"4.0.1","request":"^2.81.0","serve-favicon":"^2.4.3","should":"^11.2.1","socket.io":"^2.0.3","uuid":"^3.1.0","winston":"^2.4.0","winston-daily-rotate-file":"^1.7.2","winston-mongodb":"^3.0.1"},"devDependencies":{"babel-cli":"6.26.0","babel-core":"6.26.0","babel-eslint":"^7.2.3","babel-loader":"^7.1.1","babel-polyfill":"6.26.0","babel-preset-env":"^1.6.0","debug":"3.0.0","eslint":"4.4.1","eslint-plugin-import":"2.7.0","eslint-plugin-node":"5.1.1","eslint-watch":"3.1.2","nodemon":"^1.11.0","npm-run-all":"4.0.2","webpack":"3.5.5","webpack-bundle-analyzer":"2.9.0","webpack-dev-middleware":"1.12.0","webpack-hot-middleware":"2.18.2","webpack-md5-hash":"0.0.5"}}
 
 /***/ }),
 /* 11 */
