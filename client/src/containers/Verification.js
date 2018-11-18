@@ -78,7 +78,7 @@ console.log(roll(serverSeed, clientSeed+'-'+nonce));
                     <p className="text-info">
                         You can use a third party tool to verify roll numbers or use the following Node.js script that recreates the proccess described above. It will output your roll number.
 </p>
-                  
+                   <SyntaxHighlighter language="javascript" style={docco}>{codeString}</SyntaxHighlighter>
 
                 </div>
             </div>
